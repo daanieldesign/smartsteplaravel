@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GrowPot</title>
+        <title>SmartShoes | SmartStep</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -25,13 +25,12 @@
             /* Body Styles */
             body {
                 font-family: 'Figtree', sans-serif;
-                color: #333;
-                background-color: #f4f4f4;
+                color: black;
+                background-color: #00031c;
             }
 
             /* Navigation Styles */
             nav {
-                background-color: #fff;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 padding: 10px 0;
                 list-style-type: none;
@@ -41,7 +40,7 @@
             }
 
             nav .container {
-                max-width: 1200px;
+                max-width: 1650px;
                 margin: 0 auto;
                 padding: 0 20px;
             }
@@ -53,7 +52,7 @@
             }
 
             nav .obrazek img {
-                width: 80px;
+                width: 170px;
                 height: auto;
             }
 
@@ -63,13 +62,13 @@
             }
 
             nav a {
-                color: #333;
-                text-decoration: none; 
+                color: white;
+                text-decoration: none;
                 transition: color 0.3s;
             }
 
             nav a:hover {
-                color: #48bb78; /* Green color on hover */
+                color: grey;
             }
 
             /* Hero Section Styles */
@@ -82,6 +81,7 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 20px;
+                padding: 150px;
                 align-items: center;
             }
 
@@ -97,13 +97,13 @@
             .hero-section .content p {
                 font-size: 32px;
                 font-weight: bold;
-                color: #000;
+                color: white;
                 margin-bottom: 20px;
             }
 
             .hero-section .content a {
                 text-decoration: none;
-                background-color: black;
+                background-color: #020943;
                 color: white;
                 padding: 10px 20px;
                 border-radius: 5px;
@@ -111,14 +111,11 @@
             }
 
             .hero-section .content a:hover {
-                background-color: #48bb78;
+                background-color: white;
                 color: black;
             }
 
             /* Produkt Section */
-            #produkt {
-                padding: 40px 0;
-            }
 
             #produkt .grid {
                 display: grid;
@@ -135,9 +132,19 @@
                 align-items: center;
                 gap: 20px;
                 margin: 20px;
+                    opacity: 0; /* Skrytí prvků */
+                    transition: opacity 1s ease; /* Plynulý přechod pro zobrazení */
+                    animation: fadeIn 1s ease forwards; /* Použití animace pro zobrazení */
+                }
+                /* Definice animace pro zobrazení */
+                @keyframes fadeIn {
+                    to {
+                        opacity: 1; /* Prvky se zobrazí */
+                    }
+                }
             }
 
-            .produkt-item img {
+            .produkt-item .img {
                 width: 50px;
                 height: 50px;
             }
@@ -154,9 +161,12 @@
             }
 
             /* Features Section */
-            .features {
+            .features p {
                 text-align: center;
                 margin-top: 50px;
+                color:white;
+                font-family: 'Figtree', sans-serif;
+                font-size: 2rem;
             }
 
             .features img {
@@ -188,6 +198,7 @@
                 align-items: center;
                 padding: 0;
                 margin: 0;
+                color: white;
             }
 
 
@@ -200,21 +211,6 @@
                 content: "|";
             }
 
-            /* Contact Section */
-            #kontakt {
-                text-align: center;
-                margin-top: 40px;
-            }
-
-            #kontakt a {
-                font-size: 24px;
-                font-weight: bold;
-                padding: 20px 0;
-                display: inline-block;
-                color: #333;
-                text-decoration: none;
-            }
-
             /* Footer Styles */
             footer {
                 background-color: black;
@@ -222,6 +218,13 @@
                 padding: 20px 0;
                 text-align: center;
             }
+        footer a{
+        color: white;
+        }
+        footer a:hover{
+            transition: 0.3s;
+            color: gray;
+        }
         </style>
     </head>
     <body class="text-gray-800">
@@ -231,7 +234,7 @@
             <div class="container">
                 <div class="flex">
                     <div class="obrazek">
-                        <a href="/"><img src="Eshop-Laravel/images/grow_pot_zeleny.png" alt="GrowPot Logo" /></a>
+                        <a href="/"><img src="/images/logo.png" alt="Logo" /></a>
                     </div>
                     <ul>
                         <li><a href="/">Domů</a></li>
@@ -246,12 +249,12 @@
         <main>
             <div class="hero-section">
                 <!-- Image on the left -->
-                <img src="{{ asset('images/Logo_pot.png') }}" alt="Logo">
+                <img src="{{ asset('/images/modrabota.png') }}" alt="Logo">
 
                 <!-- Content on the right -->
                 <div class="content">
-                    <p>GrowPot.</p>
-                    <p>Automatický květináč, který zvlhčuje, měří teplotu, vlhkost, přizpůsobuje se květině, poháněný solárními panely.</p>
+                    <p>SmartShoes.</p>
+                    <p>Modernizované boty pro každého, kdo ztrácí boty nebo sám sebe. S GPS lokátorem.</p>
                     <a href="#produkt">Zjistit více</a>
                 </div>
             </div>
@@ -259,27 +262,27 @@
             <!-- Produkt Section -->
             <div id="produkt">
                 <div class="grid">
-                    <img src="Eshop-Laravel/public/images/Kvetinac_1.png" alt="Product Image" />
+                    <img src="/images/blender-smartspet-boty.trans.png" alt="Product Image" />
                     <div>
                         <div class="produkt-item">
-                            <img src="Eshop-Laravel/public/images/watering-can.png" alt="Watering Can" />
+                            <img src="/images/1314324-200.png" style="width: auto; height: 70px;" alt="Watering Can" />
                             <div>
-                                <h2>Automatizované zavlažování</h2>
-                                <p>Zalévání Integrovaným zavlažovacím systémem.</p>
+                                <h2>SmartStep.</h2>
+                                <p>Aplikace, která Vám poskytne potřebné údaje k Vašemu životnímu stylu. Propojená se SmartShoes.</p>
                             </div>
                         </div>
                         <div class="produkt-item">
-                            <img src="Eshop-Laravel/public/images/solar-panel.png" alt="Solar Panel" />
+                            <img src="/images/cipkbote.png" style="width: auto; height: 70px;" alt="Solar Panel" />
                             <div>
-                                <h2>Ekologické napájení</h2>
-                                <p>Napájení pomocí solárních panelů.</p>
+                                <h2>GPS lokátor furt u sebe.</h2>
+                                <p>Vložka, pod kterou lokátor je, lze jednoduše vytáhnout. Výměna baterie je jednoduchá.</p>
                             </div>
                         </div>
                         <div class="produkt-item">
-                            <img src="Eshop-Laravel/public/images/test.png" alt="Fertilization" />
+                            <img src="/images/bezovabota.png" style="width: auto; height: 70px;" alt="Fertilization" />
                             <div>
-                                <h2>Automatické hnojení</h2>
-                                <p>Napájen solárními panely, které efektivně využívají sluneční energii.</p>
+                                <h2>Více barev? Žádný problém.</h2>
+                                <p>Nemáme jen klasické barvy, máme také béžovou, růžovou modrou a spoustu dalších.</p>
                             </div>
                         </div>
                     </div>
@@ -288,24 +291,19 @@
 
             <!-- Features Section -->
             <div class="features">
-                <img src="Eshop-Laravel/public/images/Logo_pot.png" alt="GrowPot Logo">
+                <p>Cena začíná na 1 899 Kč. Za tuhle cenu Vám ale poskytujeme:</p>
                 <ul class="features-list">
-                    <li><span class="feature">Efektivní</span></li>
-                    <li><span class="feature">Úsporný</span></li>
-                    <li><span class="feature">Stylový</span></li>
-                    <li><span class="feature">Praktický</span></li>
+                    <li><span class="feature">Bezpečnost</span></li>
+                    <li><span class="feature">Elegance</span></li>
+                    <li><span class="feature">Pohodlí</span></li>
                 </ul>
             </div>
         </main>
 
-        <!-- Contact Section -->
-        <div id="kontakt">
-            <a href="mailto:growpot-contact@gmail.com">Email: growpot-contact@email.com</a>
-        </div>
-
         <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 Lubor Kaluža, Lukáš Juřena, Václav Frýbort</p>
+        <footer id="kontakt">
+            <p>&copy; 2024 Daniel Mahďák, Barbora Šťávová, Alena Lišková</p>
+            <a class="footer-mail" href="mailto:hello@smartstep.com">Email: hello@smartstep.com</a>
         </footer>
 
         <!-- GSAP Animations-->
@@ -331,37 +329,16 @@
                 delay: 0.3
             });
 
-            // Produkt items animation with ScrollTrigger
-            gsap.from(".produkt-item", {
-                duration: 1,
-                opacity: 0,
-                x: 200,  // Začíná 200px vpravo
-                stagger: 0.3,  // Každý item se objeví postupně
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: "#produkt", // Cíl triggeru je sekce #produkt
-                    start: "top 80%", // Začne, když je horní okraj sekce na 80% výšky okna
-                    end: "top 10%", // Končí, když horní okraj sekce dojde k 10% výšky okna
-                    scrub: true, // Plynulý pohyb se scrollováním
-                    markers: false // Markery pro ladění
-                }
-            });
+// Features section animation without ScrollTrigger (appears on page load)
+gsap.from(".features .feature", {
+    duration: 4,          // Trvání animace 4 sekundy
+    opacity: 0,           // Začíná s průhledností 0
+    x: 200,               // Začíná 200px vpravo
+    stagger: 0.2,         // Zpoždění mezi animacemi jednotlivých prvků
+    ease: "power3.out"    // Způsob průběhu animace
+});
 
-            // Features section animation with ScrollTrigger (moving elements from right to left)
-            gsap.from(".features .feature", {
-                duration: 1,
-                opacity: 0,
-                x: 200, // Začíná 200px vpravo
-                stagger: 0.2,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: ".features", // Cíl triggeru je sekce features
-                    start: "top 80%", // Začne, když je horní okraj sekce v 80% viditelnosti
-                    end: "top 30%", // Končí, když je horní okraj sekce v 30% viditelnosti
-                    scrub: true, // Plynulý pohyb se scrollováním
-                    markers: false // Zobrazí markery pro ladění
-                }
-            });
+
 
             // Mouse move effect for the last image in the Features section
             const lastImage = document.querySelector('.features img');
@@ -381,6 +358,6 @@
 
 
 
-        
+
     </body>
 </html>
